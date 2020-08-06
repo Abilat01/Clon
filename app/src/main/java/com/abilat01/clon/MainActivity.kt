@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.Toast
 import android.widget.Toolbar
 import com.abilat01.clon.databinding.ActivityMainBinding
+import com.abilat01.clon.ui.ChatsFragment
+import com.abilat01.clon.ui.SettingFragment
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
@@ -37,6 +39,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initFunc() {
         setSupportActionBar(mToolbar)
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.dataContainer, ChatsFragment()).commit()
         createHeader()
         createDrawer()
     }
@@ -101,7 +105,11 @@ class MainActivity : AppCompatActivity() {
                     position: Int,
                     drawerItem: IDrawerItem<*>
                 ): Boolean {
-                    Toast.makeText(applicationContext, position.toString(), Toast.LENGTH_SHORT).show()
+                    when(position){
+                        7 -> supportFragmentManager.beginTransaction()
+                            .addToBackStack(null)//Быстрый возрат
+                            .replace(R.id.dataContainer, SettingFragment()).commit()
+                    }
                     return false
                 }
             }).build()
