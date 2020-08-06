@@ -1,4 +1,4 @@
-package com.abilat01.clon.ui
+package com.abilat01.clon.ui.fragrents
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,17 +9,10 @@ import com.abilat01.clon.R
 import com.abilat01.clon.databinding.FragmentChatsBinding
 
 
-class ChatsFragment : Fragment() {
+class ChatsFragment : BaseFragment(R.layout.fragment_chats) {
 
     private lateinit var mBinding: FragmentChatsBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-       mBinding = FragmentChatsBinding.inflate(layoutInflater)
-        return mBinding.root
-    }
 
     override fun onResume() {
         super.onResume()
