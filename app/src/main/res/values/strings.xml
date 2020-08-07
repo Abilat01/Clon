@@ -8,4 +8,6 @@
     <string name="settings_default_number">+79523939888</string>
     <string name="Settings_label_phone_number">Нажмите что бы изменить номер телефона</string>
     <string name="settings_label_login">Имя пользователь</string>
+    <string name="settings_dafault_bio">О себе</string>
+    <string name="settings_login_bio">Напишите немного о себе</string>
 </resources>
